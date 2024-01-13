@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Курсач.TabbedPage1">
+  <!--Pages can be added as references or inline-->
+    <ContentPage Title="Главная" BackgroundColor="Aquamarine">
+        <!--<StackLayout>
+            <Label Text="Добро пожаловать" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"  FontSize="30"/>
+        </StackLayout>-->
+        <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
+            <Label Text="Выберете режим игры" TextColor="White" FontSize="30"/>
+            <Button Text="С русского на английский" Clicked="Mode_1"/>
+            <Button Text="С английского на русский" Clicked="Mode_2" />
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Словарь">
+        <CollectionView x:Name="LibPair">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout BackgroundColor="Aquamarine" Orientation="Vertical">
+                        <Label Text="-------------------------------------" FontSize="10" TextColor="Black"/>
+                        <Label Text="{Binding ENG}" FontSize="Medium" TextColor="Crimson" />
+                        <Label Text="{Binding RUS}" FontSize="Medium" TextColor="Green"  />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </ContentPage>
+    <ContentPage Title="Добавление и поиск" BackgroundColor="Aquamarine">
+        <StackLayout  BackgroundColor="Aquamarine">
+            <StackLayout >
+                <Entry x:Name="EngField" Placeholder="Введите слово на Английском" BackgroundColor="White" />
+                <Entry x:Name="RusField" Placeholder="Введите слово на Русском" BackgroundColor="White" />
+            </StackLayout>
+            <Frame CornerRadius="20" Padding="5">
+                <Button Text="Add Pair" Clicked="AddPairButton"/>
+            </Frame>
+            <StackLayout>
+                <Entry x:Name="Field" Placeholder="Найти слово" BackgroundColor="White" />
+            </StackLayout>
+            <Frame CornerRadius="20" Padding="5">
+                <Button Text="Search" Clicked="SearchPair"/>
+            </Frame>
+            <CollectionView x:Name="Word1">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout BackgroundColor="Aquamarine" Orientation="Vertical">
+                            <Label Text="-------------------------------------" FontSize="10" TextColor="Black"/>
+                            <Label Text="{Binding ENG}" FontSize="Medium" TextColor="Crimson" />
+                            <Label Text="{Binding RUS}" FontSize="Medium" TextColor="Green"  />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage>
+</TabbedPage>

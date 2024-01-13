@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Курсач.MainPage">
+
+    <StackLayout  BackgroundColor="White">
+        <StackLayout >
+            <Entry x:Name="EngField" Placeholder="Введите слово на Английском" BackgroundColor="White" />
+            <Entry x:Name="RusField" Placeholder="Введите слово на Русском" BackgroundColor="White" />
+        </StackLayout>
+        <Frame BackgroundColor="White" CornerRadius="20" Padding="5">
+            <Button Text="Add Pair" Clicked="AddPairButton"/>
+        </Frame>
+
+        <CollectionView x:Name="LibPair">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout BackgroundColor="White">
+                        <Label Text="-------------------------------------" FontSize="25" TextColor="Black"/>
+                        <Label Text="{Binding ENG}" FontSize="25" TextColor="Crimson" />
+                        <Label Text="{Binding RUS}" FontSize="25" TextColor="Green"  />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+
+</ContentPage>

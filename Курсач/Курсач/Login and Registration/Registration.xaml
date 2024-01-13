@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Курсач.Registration" BackgroundColor="Aquamarine">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <Label Text="Регистрация" FontSize="30" TextColor="Black" />
+            <Entry x:Name ="UserName" Placeholder="Логин" FontSize="30" TextColor="Black"/>
+            <Entry x:Name ="Password" Placeholder="Пароль" FontSize="30" TextColor="Black" IsPassword="True"/>
+            <Button Text="Подтвердить" TextColor="Black" Clicked="Button_Clicked"/>
+            <Button Text="Вернуться к логину" TextColor="Black" Clicked="Button_Clicked_1" HeightRequest="80" WidthRequest="50" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
